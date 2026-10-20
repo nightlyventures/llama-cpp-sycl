@@ -5,7 +5,7 @@ Run [llama.cpp](https://github.com/ggml-org/llama.cpp) with the **SYCL backend o
 ## Quick start
 
 ```bash
-docker pull ghcr.io/richardvenneman/llama-cpp-sycl
+docker pull ghcr.io/nightlyventures/llama-cpp-sycl
 ```
 
 Download a GGUF model (e.g. from [Hugging Face](https://huggingface.co/models?sort=trending&search=gguf)):
@@ -23,7 +23,7 @@ docker run -d \
   --device /dev/dri \
   -v $(pwd)/models:/models:ro \
   -p 8080:8080 \
-  ghcr.io/richardvenneman/llama-cpp-sycl \
+  ghcr.io/nightlyventures/llama-cpp-sycl \
   --model /models/Qwen3-4B-Q4_K_M.gguf
 ```
 
@@ -44,7 +44,7 @@ curl http://localhost:8080/v1/chat/completions \
 docker run -it --rm \
   --device /dev/dri \
   -v /path/to/models:/models:ro \
-  ghcr.io/richardvenneman/llama-cpp-sycl \
+  ghcr.io/nightlyventures/llama-cpp-sycl \
   llama-cli --model /models/your-model.gguf -cnv
 ```
 
@@ -76,7 +76,7 @@ Make sure the container has access to `/dev/dri` and the GIDs match between host
 ## Build from source
 
 ```bash
-git clone https://github.com/richardvenneman/llama-cpp-sycl.git
+git clone https://github.com/nightlyventures/llama-cpp-sycl.git
 cd llama-cpp-sycl
 docker build -t llama-cpp-sycl .
 ```
